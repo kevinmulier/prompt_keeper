@@ -4,8 +4,9 @@
   "description": "Prompt Keeper - Efficient Prompt Management for AI Applications",
   "main": "app.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=prod postcss public/styles/tailwind.css -o public/styles/style.css node app",
-    "dev": "cross-env NODE_ENV=dev postcss public/styles/tailwind.css -o public/styles/style.css nodemon app"
+    "start": "cross-env NODE_ENV=prod node app",
+    "dev": "cross-env NODE_ENV=dev nodemon app",
+    "build-dev": "postcss public/css/tailwind.css -o public/css/style.css --watch"
   },
   "keywords": [
     "AI",
