@@ -4,7 +4,8 @@
   "description": "Prompt Keeper - Efficient Prompt Management for AI Applications",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cross-env NODE_ENV=production node app",
+    "dev": "cross-env NODE_ENV=production nodemon app"
   },
   "keywords": [
     "AI",
