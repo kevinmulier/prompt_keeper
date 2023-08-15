@@ -1,0 +1,16 @@
+{
+  "name": "prompt_keeper",
+  "version": "1.0.0",
+  "description": "Prompt Keeper - Efficient Prompt Management for AI Applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "AI",
+    "prompt",
+    "prompt management"
+  ],
+  "author": "Kevin Mulier",
+  "license": "ISC"
+}
