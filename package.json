@@ -4,8 +4,8 @@
   "description": "Prompt Keeper - Efficient Prompt Management for AI Applications",
   "main": "app.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node app",
-    "dev": "cross-env NODE_ENV=production nodemon app"
+    "start": "cross-env NODE_ENV=prod node app",
+    "dev": "cross-env NODE_ENV=dev nodemon app"
   },
   "keywords": [
     "AI",
