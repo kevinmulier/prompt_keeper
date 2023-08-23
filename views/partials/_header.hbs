@@ -1,12 +1,13 @@
 <header class="bg-violet-950">
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-        <div class="flex lg:flex-1">
+        <div class="flex sm:flex-1">
             <a href="/" class="font-semibold text-lg text-white">
                 <i class="fa-regular fa-bookmark mr-3"></i>Prompt Keeper
             </a>
         </div>
-        <div class="flex lg:hidden">
-            <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white">
+        <div class="flex sm:hidden">
+            <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+                id="openMenu">
                 <span class="sr-only">Open main menu</span>
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                     aria-hidden="true">
@@ -15,14 +16,14 @@
                 </svg>
             </button>
         </div>
-        <div class="hidden lg:flex lg:gap-x-12">
+        <div class="hidden sm:flex sm:gap-x-3 lg:gap-x-12">
             <a href="/dashboard"
                 class="text-sm font-semibold leading-6 rounded-lg px-3 py-2 text-white hover:bg-violet-900">Dashboard</a>
             <a href="/gallery"
                 class="text-sm font-semibold leading-6 rounded-lg px-3 py-2 text-white hover:bg-violet-900">Prompt
                 Gallery</a>
         </div>
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div class="hidden sm:flex sm:flex-1 sm:justify-end">
             <a href="/auth/logout"
                 class="text-sm font-semibold leading-6 bg-violet-900 hover:bg-violet-800 rounded-lg shadow-lg text-white p-2">Log
                 out</a>
@@ -30,7 +31,7 @@
     </nav>
     <div class="w-11/12 h-0.5 bg-white mx-auto"></div>
     <!-- Mobile menu, show/hide based on menu open state. -->
-    <div class="sm:hidden" role="dialog" aria-modal="true">
+    <div class="sm:hidden" role="dialog" aria-modal="true" id="mobileMenu">
         <!-- Background backdrop, show/hide based on slide-over state. -->
         <div class="fixed inset-0 z-10"></div>
         <div
@@ -39,7 +40,7 @@
                 <a href="/" class="font-semibold text-lg text-white">
                     <i class="fa-regular fa-bookmark mr-3"></i>Prompt Keeper
                 </a>
-                <button type="button" class="-m-2.5 rounded-md p-2.5 text-white">
+                <button type="button" class="-m-2.5 rounded-md p-2.5 text-white" id="closeMenu">
                     <span class="sr-only">Close menu</span>
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                         aria-hidden="true">
