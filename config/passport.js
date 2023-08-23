@@ -15,12 +15,12 @@ module.exports = function (passport) {
           googleID: profile.id,
           displayName: profile.displayName,
           firstName: profile.name.givenName,
-          lastName: profile.name.familyName,
+          lastName: profile.name.familyName || "Null",
           image: profile.photos[0].value,
         };
 
         try {
-          let user = await User.findOne({ googleId: profile.id });
+          let user = await User.findOne({ googleID: profile.id });
 
           if (user) {
             done(null, user);
@@ -35,19 +35,16 @@ module.exports = function (passport) {
     )
   );
 
-  passport.serializeUser((user, cb) => {
-    process.nextTick(function () {
-      return cb(null, {
-        id: user.id,
-        username: user.username,
-        picture: user.picture,
-      });
-    });
+  passport.serializeUser((user, done) => {
+    done(null, user.id);
   });
 
-  passport.deserializeUser((user, cb) => {
-    process.nextTick(function () {
-      return cb(null, user);
-    });
+  passport.deserializeUser(async function (id, done) {
+    try {
+      const user = await User.findById(id);
+      done(null, user);
+    } catch (err) {
+      console.error(err);
+    }
   });
 };
