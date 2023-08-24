@@ -1,0 +1,53 @@
+<h3 class="text-2xl font-bold mb-5">Add a new prompt:</h3>
+<section class="flex flex-wrap">
+    <form action="/prompts" method="POST" class="w-full">
+        <fieldset class="flex flex-wrap mb-4">
+            <label for="title" class="block text-white text-sm font-bold mb-2">Title:</label>
+            <input type="text" id="title" name="title"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-violet-950 leading-tight focus:outline-none focus:shadow-outline">
+        </fieldset>
+
+        <fieldset class="flex flex-wrap flex-col mb-4">
+            <label for="ai" class="block text-white text-sm font-bold mb-2">AI:</label>
+            <select id="ai" name="ai"
+                class="shadow border rounded w-fit py-2 px-3 text-violet-950 leading-tight focus:outline-none focus:shadow-outline">
+                <option value="ChatGPT" selected>ChatGPT</option>
+                <option value="Bard">Bard</option>
+                <option value="Claude 2">Claude 2</option>
+                <option value="Llama 2">Llama 2</option>
+                <option value="Midjourney">Midjourney</option>
+                <option value="Stable Diffusion">Stable Diffusion</option>
+                <option value="DALL-E 2">DALL-E 2</option>
+            </select>
+        </fieldset>
+
+        <fieldset class="flex flex-wrap flex-col mb-4">
+            <label for="status" class="block text-white text-sm font-bold mb-2">Status:</label>
+            <select id="status" name="status"
+                class="shadow border rounded w-fit py-2 px-3 text-violet-950 leading-tight focus:outline-none focus:shadow-outline">
+                <option value="public" selected>Public</option>
+                <option value="private">Private</option>
+            </select>
+        </fieldset>
+
+        <fieldset class="flex flex-wrap mb-4">
+            <legend class="text-xl font-bold mb-2">Paste your prompt:</legend>
+            <div id="body" name="body"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-violet-950 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+        </fieldset>
+
+        <fieldset class="flex flex-wrap mb-4">
+            <legend class="text-xl font-bold mb-2">Description (optional):</legend>
+            <textarea id="description" name="description"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-violet-950 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+        </fieldset>
+
+        <nav class="flex flex-wrap mb-4">
+            <input type="submit" value="Save"
+                class="bg-violet-600 hover:bg-violet-800 text-white font-bold py-2 px-4 rounded cursor-pointer">
+            <a href="/dashboard"
+                class="ml-4 bg-red-600 hover:bg-red-800 text-white font-bold py-2 px-4 rounded">Cancel</a>
+        </nav>
+    </form>
+</section>
