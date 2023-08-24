@@ -13,10 +13,21 @@
 <body class="bg-violet-950 text-white">
   {{> _header}}
   {{> _add_btn}}
-  <section class="container">
+  <section class="container mx-auto p-6 lg:px-8">
     {{{body}}}
   </section>
+
   <script src="/js/main.js" type="module"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+
+
+  <script>
+    ClassicEditor
+      .create(document.querySelector('#body'))
+      .catch(error => {
+        console.error(error);
+      });
+  </script>
 </body>
 
 </html>
