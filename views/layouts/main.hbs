@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prompt Keeper - Efficient Prompt Management for AI tools</title>
   <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/ckeditor.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -18,15 +19,30 @@
   </section>
 
   <script src="/js/main.js" type="module"></script>
-  <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+  <script src="/js/ckeditor.js"></script>
 
 
   <script>
-    ClassicEditor
-      .create(document.querySelector('#body'))
-      .catch(error => {
-        console.error(error);
-      });
+    InlineEditor
+      .create(document.querySelector('#body'), {
+        // Editor configuration.
+      })
+      .then(editor => {
+        window.editor = editor;
+      })
+      .catch(handleSampleError);
+
+    function handleSampleError(error) {
+      const issueUrl = 'https://github.com/ckeditor/ckeditor5/issues';
+
+      const message = [
+        'Oops, something went wrong!',
+        `Please, report the following error on ${issueUrl} with the build id "gd0q3fw33l59-h6xnjjomw37x" and the error stack trace:`
+      ].join('\n');
+
+      console.error(message);
+      console.error(error);
+    }
   </script>
 </body>
 
