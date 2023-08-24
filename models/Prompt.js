@@ -19,6 +19,11 @@ const PromptSchema = new mongoose.Schema({
     default: "public",
     enum: ["public", "private"],
   },
+  aiModel: {
+    type: String,
+    default: "ChatGPT",
+    enum: ["ChatGPT", "Bard", "Claude 2", "Llama 2", "Midjourney", "Stable Diffusion", "DALL-E 2"],
+  },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
