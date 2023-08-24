@@ -1,2 +1,31 @@
 <h6>Dashboard</h6>
 <h3>Welcome {{name}}</h3>
+<p>Here are your prompts :</p>
+{{#if prompts}}
+<table class="table-auto">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>AI Model</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each prompts}}
+        <tr>
+            <td><a href="/prompts/{{_id}}">{{title}}</a></td>
+            <td><span>{{aiModel}}</span></td>
+            <td><span>{{description}}</span></td>
+            <td>{{createdAt}}</td>
+            <td><span>{{status}}</span></td>
+            <td></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<p>You have not added any prompts.</p>
+{{/if}}
