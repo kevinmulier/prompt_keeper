@@ -15,10 +15,10 @@
     <tbody>
         {{#each prompts}}
         <tr class="text-xs border-t border-white md:text-sm lg:text-base">
-            <td class="px-2 py-3"><a href="/prompts/{{_id}}">{{title}}</a></td>
+            <td class="px-2 py-3"><a href="/prompts/{{_id}}">{{toUpperCase this.title}}</a></td>
             <td class="px-2 py-3"><span>{{ai}}</span></td>
             <td class="px-2 py-3">{{formatDate this.createdAt}}</td>
-            <td class="px-2 py-3"><span>{{status}}</span></td>
+            <td class="px-2 py-3"><span>{{toUpperCase this.status}}</span></td>
             <td class="px-2 py-3"></td>
         </tr>
         {{/each}}
