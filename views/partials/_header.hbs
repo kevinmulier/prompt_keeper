@@ -1,15 +1,15 @@
 <header class="bg-violet-950">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <nav class="flex items-center justify-between p-6 mx-auto max-w-7xl lg:px-8" aria-label="Global">
         <div class="flex sm:flex-1">
-            <a href="/" class="font-semibold text-lg lg:text-2xl text-white">
-                <i class="fa-regular fa-bookmark mr-3"></i>Prompt Keeper
+            <a href="/" class="text-lg font-semibold text-white lg:text-2xl">
+                <i class="mr-3 fa-regular fa-bookmark"></i>Prompt Keeper
             </a>
         </div>
         <div class="flex sm:hidden">
             <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
                 id="openMenu">
                 <span class="sr-only">Open main menu</span>
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                     aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -18,14 +18,14 @@
         </div>
         <div class="hidden sm:flex sm:gap-x-3 lg:gap-x-12">
             <a href="/dashboard"
-                class="text-sm lg:text-lg font-semibold leading-6 rounded-lg px-3 py-2 text-white hover:bg-violet-900">Dashboard</a>
+                class="px-3 py-2 text-sm font-semibold leading-6 text-white rounded-lg lg:text-lg hover:bg-violet-900">Dashboard</a>
             <a href="/gallery"
-                class="text-sm lg:text-lg font-semibold leading-6 rounded-lg px-3 py-2 text-white hover:bg-violet-900">Prompt
+                class="px-3 py-2 text-sm font-semibold leading-6 text-white rounded-lg lg:text-lg hover:bg-violet-900">Prompt
                 Gallery</a>
         </div>
         <div class="hidden sm:flex sm:flex-1 sm:justify-end">
             <a href="/auth/logout"
-                class="text-sm lg:text-lg font-semibold leading-6 bg-violet-900 hover:bg-violet-800 rounded-lg shadow-lg text-white p-2">Log
+                class="p-2 text-sm font-semibold leading-6 text-white rounded-lg shadow-lg lg:text-lg bg-violet-900 hover:bg-violet-800">Log
                 out</a>
         </div>
     </nav>
@@ -35,26 +35,26 @@
         <!-- Background backdrop, show/hide based on slide-over state. -->
         <div class="fixed inset-0 z-10"></div>
         <div
-            class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-violet-950 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-violet-900/10">
+            class="fixed inset-y-0 right-0 z-10 w-full px-6 py-6 overflow-y-auto bg-violet-950 sm:max-w-sm sm:ring-1 sm:ring-violet-900/10">
             <div class="flex items-center justify-between">
-                <a href="/" class="font-semibold text-lg text-white">
-                    <i class="fa-regular fa-bookmark mr-3"></i>Prompt Keeper
+                <a href="/" class="text-lg font-semibold text-white">
+                    <i class="mr-3 fa-regular fa-bookmark"></i>Prompt Keeper
                 </a>
                 <button type="button" class="-m-2.5 rounded-md p-2.5 text-white" id="closeMenu">
                     <span class="sr-only">Close menu</span>
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                         aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
-            <div class="mt-6 flow-root">
+            <div class="flow-root mt-6">
                 <div class="-my-6 divide-y divide-white">
-                    <div class="space-y-2 py-6">
+                    <div class="py-6 space-y-2">
                         <a href="/dashboard"
-                            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-violet-900">Dashboard</a>
+                            class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-white rounded-lg hover:bg-violet-900">Dashboard</a>
                         <a href="/gallery"
-                            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-violet-900">Prompts
+                            class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-white rounded-lg hover:bg-violet-900">Prompts
                             Gallery</a>
                     </div>
                     <div class="py-6">
