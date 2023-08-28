@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const exphbs = require("express-handlebars");
+const Handlebars = exphbs.create().handlebars;
 const passport = require("passport");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
@@ -31,6 +32,11 @@ if (process.env.NODE_ENV === "dev") {
 // Handlebars
 app.engine(".hbs", exphbs.engine({ defaultLayout: "main", extname: ".hbs" }));
 app.set("view engine", ".hbs");
+
+// Handlebars date helper
+Handlebars.registerHelper("formatDate", function (date) {
+  return new Date(date).toLocaleDateString("en-US").split("/").slice(0, 2).join("/");
+});
 
 // Sessions middleware
 app.use(
