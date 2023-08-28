@@ -35,7 +35,17 @@ app.set("view engine", ".hbs");
 
 // Handlebars date helper
 Handlebars.registerHelper("formatDate", function (date) {
-  return new Date(date).toLocaleDateString("en-US").split("/").slice(0, 2).join("/");
+  const formattedDate = new Date(date).toLocaleDateString("en-US", {
+    year: "2-digit",
+    month: "2-digit",
+    day: "2-digit",
+  });
+  return formattedDate;
+});
+
+// Handlebars Uppercase
+Handlebars.registerHelper("toUpperCase", function (string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 });
 
 // Sessions middleware
