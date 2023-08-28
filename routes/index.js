@@ -16,7 +16,7 @@ router.get("/", ensureGuest, (req, res) => {
 // Route : GET /dashboard
 router.get("/dashboard", ensureAuth, async (req, res) => {
   try {
-    const prompts = await Prompt.find({ user: req.user.id }).lean();
+    const prompts = await Prompt.find({ user: req.user.id }).sort({ createdAt: -1 }).lean();
     res.render("dashboard", {
       name: req.user.firstName,
       prompts,
