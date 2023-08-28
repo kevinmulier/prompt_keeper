@@ -20,6 +20,7 @@ router.get("/dashboard", ensureAuth, async (req, res) => {
     res.render("dashboard", {
       name: req.user.firstName,
       prompts,
+      addButton: true,
     });
   } catch (err) {
     console.error(err);

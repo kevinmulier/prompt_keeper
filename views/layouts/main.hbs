@@ -12,7 +12,9 @@
 
 <body class="text-white bg-gradient-to-b from-violet-950 md:from-[100px] to-blue-900">
   {{> _header}}
+  {{#if addButton}}
   {{> _add_btn}}
+  {{/if}}
   <section class="container p-6 mx-auto lg:px-8">
     {{{body}}}
   </section>
