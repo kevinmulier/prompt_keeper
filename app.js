@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const exphbs = require("express-handlebars");
-const Handlebars = exphbs.create().handlebars;
 const passport = require("passport");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
@@ -29,24 +28,12 @@ if (process.env.NODE_ENV === "dev") {
   app.use(morgan("dev"));
 }
 
+// Handlebars Helpers
+const { formatDate, toUpperCase } = require("./helpers/hbs");
+
 // Handlebars
-app.engine(".hbs", exphbs.engine({ defaultLayout: "main", extname: ".hbs" }));
+app.engine(".hbs", exphbs.engine({ helpers: { formatDate, toUpperCase }, defaultLayout: "main", extname: ".hbs" }));
 app.set("view engine", ".hbs");
-
-// Handlebars date helper
-Handlebars.registerHelper("formatDate", function (date) {
-  const formattedDate = new Date(date).toLocaleDateString("en-US", {
-    year: "2-digit",
-    month: "2-digit",
-    day: "2-digit",
-  });
-  return formattedDate;
-});
-
-// Handlebars Uppercase
-Handlebars.registerHelper("toUpperCase", function (string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-});
 
 // Sessions middleware
 app.use(
