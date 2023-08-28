@@ -19,6 +19,10 @@ connectDB();
 
 const app = express();
 
+// JSON body parse middleware
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 // Logging with morgan
 if (process.env.NODE_ENV === "dev") {
   app.use(morgan("dev"));
