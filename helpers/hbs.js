@@ -11,4 +11,8 @@ module.exports = {
   toUpperCase: function (string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   },
+
+  concatToLowerCase: function (string) {
+    return string.split(" ").join("").toLowerCase();
+  },
 };
