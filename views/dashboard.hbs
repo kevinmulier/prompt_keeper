@@ -7,7 +7,7 @@
         <tr class="text-sm md:text-base lg:text-lg">
             <th class="w-5/12 px-2 py-4">Title</th>
             <th class="w-2/12 px-2 py-4">AI</th>
-            <th class="w-2/12 px-2 py-4">Date</th>
+            <th class="w-2/12 px-2 py-4 max-sm:hidden">Date</th>
             <th class="w-2/12 px-2 py-4">Status</th>
             <th class="w-1/12 px-2 py-4"></th>
         </tr>
@@ -15,9 +15,10 @@
     <tbody>
         {{#each prompts}}
         <tr class="text-xs border-t border-white md:text-sm lg:text-base odd:bg-slate-900">
-            <td class="px-2 py-3"><a href="/prompts/{{_id}}">{{toUpperCase this.title}}</a></td>
+            <td class="px-2 py-3"><a href="/prompts/{{_id}}" class="break-all line-clamp-2">{{toUpperCase
+                    this.title}}</a></td>
             <td class="px-2 py-3"><span>{{ai}}</span></td>
-            <td class="px-2 py-3">{{formatDate this.createdAt}}</td>
+            <td class="px-2 py-3 max-sm:hidden">{{formatDate this.createdAt}}</td>
             <td class="px-2 py-3"><span>{{toUpperCase this.status}}</span></td>
             <td class="px-2 py-3"></td>
         </tr>
