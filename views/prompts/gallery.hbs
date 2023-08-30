@@ -1,0 +1,30 @@
+<h1 class="mb-8 text-sm font-bold text-center sm:text-base md:text-xl lg:text-2xl">Latest Prompts</h1>
+{{#if prompts}}
+<div
+    class="container grid grid-cols-2 gap-4 mx-auto md:gap-6 lg:gap-10 md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
+    {{#each prompts}}
+    <div class="flex flex-col items-center p-2 bg-white rounded-lg">
+        <img src="/assets/logos/{{concatToLowerCase ai}}.webp" class="w-1/2 mb-3 rounded-lg">
+        <div class="flex flex-col justify-between w-full h-full p-4 pt-0">
+            <div class="flex flex-col justify-between mb-3">
+                <h2 href="#" class="text-xs font-bold text-gray-900 break-all line-clamp-1">
+                    {{title}}</h2>
+                <p class="mb-2 text-xs text-gray-700 break-all ">{{ai}}</p>
+                <p class="text-xs text-gray-700 break-all line-clamp-4">{{description}}
+                </p>
+            </div>
+            <div class="flex items-center mt-auto">
+                <a href="#"><img class="w-8 h-8 mr-4 rounded-full" src="{{user.image}}" referrerpolicy="no-referrer"
+                        alt="Avatar of {{user.displayName}}"></a>
+                <div class="text-xs">
+                    <a href="#" class="font-semibold leading-none text-black">{{user.displayName}}</a>
+                    <p class="text-black">{{formatDate createdAt}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{else}}
+<p class="text-lg col-span-full sm:text-xl md:text-2xl">No public prompt available.</p>
+{{/if}}
