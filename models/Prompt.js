@@ -8,7 +8,7 @@ const PromptSchema = new mongoose.Schema({
   },
   description: {
     type: String,
-    required: false,
+    required: true,
   },
   body: {
     type: String,
