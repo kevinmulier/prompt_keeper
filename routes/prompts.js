@@ -5,7 +5,7 @@ const { ensureAuth } = require("../middleware/auth");
 const Prompt = require("../models/Prompt");
 
 // Desc : Prompts gallery
-// Route : GET /prompt/gallery
+// Route : GET /prompts/gallery
 router.get("/gallery", ensureAuth, async (req, res) => {
   try {
     const prompts = await Prompt.find({ status: "public" }).populate("user").sort({ createdAt: -1 }).lean();
