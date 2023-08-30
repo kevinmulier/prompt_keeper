@@ -4,6 +4,21 @@ const { ensureAuth } = require("../middleware/auth");
 
 const Prompt = require("../models/Prompt");
 
+// Desc : Prompts gallery
+// Route : GET /prompt/gallery
+router.get("/gallery", ensureAuth, async (req, res) => {
+  try {
+    const prompts = await Prompt.find({ status: "public" }).populate("user").sort({ createdAt: -1 }).lean();
+    res.render("prompts/gallery", {
+      prompts,
+      addButton: true,
+    });
+  } catch (err) {
+    console.error(err);
+    res.render("error/500");
+  }
+});
+
 // Desc : Add new prompt page
 // Route : GET /prompts/add
 router.get("/add", ensureAuth, (req, res) => {
