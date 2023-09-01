@@ -1,6 +1,7 @@
 <h3 class="mb-5 text-2xl font-bold">Edit your prompt</h3>
 <section class="flex flex-wrap">
-    <form action="/prompts" method="POST" class="w-full">
+    <form action="/prompts/{{prompt._id}}" method="POST" class="w-full">
+        <input type="hidden" name="_method" value="PUT">
         <fieldset class="flex flex-wrap mb-4">
             <label for="title" class="block mb-2 text-xl font-bold text-white">Title</label>
             <input type="text" id="title" name="title" minlength="1" maxlength="40"
