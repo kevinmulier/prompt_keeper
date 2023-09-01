@@ -38,4 +38,24 @@ router.post("/", ensureAuth, async (req, res) => {
   }
 });
 
+// Desc : Edit prompt page
+// Route : GET /prompts/edit/:id
+router.get("/edit/:id", ensureAuth, async (req, res) => {
+  const prompt = await Prompt.findOne({
+    _id: req.params.id,
+  }).lean();
+
+  if (!prompt) {
+    return res.render("error/404");
+  }
+
+  if (prompt.user != req.user.id) {
+    res.redirect("/prompts");
+  } else {
+    res.render("prompts/edit", {
+      prompt,
+    });
+  }
+});
+
 module.exports = router;
