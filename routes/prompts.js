@@ -74,15 +74,14 @@ router.put("/:id", ensureAuth, async (req, res) => {
     }
 
     if (prompt.user != req.user.id) {
-      res.redirect("/prompts/gallery");
+      res.redirect("/dashboard");
     } else {
       prompt = await Prompt.findOneAndUpdate({ _id: req.params.id }, req.body, {
         new: true,
         runValidators: true,
       });
+      res.redirect("/dashboard");
     }
-
-    res.redirect("/dashboard");
   } catch (err) {
     console.error(err);
     res.render("error/500");
@@ -100,15 +99,11 @@ router.delete("/:id", ensureAuth, async (req, res) => {
     }
 
     if (prompt.user != req.user.id) {
-      res.redirect("/prompts/gallery");
+      res.redirect("/dashboard");
     } else {
-      prompt = await Prompt.findOneAndUpdate({ _id: req.params.id }, req.body, {
-        new: true,
-        runValidators: true,
-      });
+      await Prompt.deleteOne({ _id: req.params.id });
+      res.redirect("/dashboard");
     }
-
-    res.redirect("/dashboard");
   } catch (err) {
     console.error(err);
     res.render("error/500");
