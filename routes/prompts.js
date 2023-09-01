@@ -19,10 +19,27 @@ router.get("/gallery", ensureAuth, async (req, res) => {
   }
 });
 
-// Desc : Add new prompt page
-// Route : GET /prompts/add
-router.get("/add", ensureAuth, (req, res) => {
-  res.render("prompts/add");
+// Desc : Get single prompt
+// Route : GET /prompts/:id
+router.get("/:id", ensureAuth, async (req, res) => {
+  try {
+    let prompt = await Prompt.findById(req.params.id).populate("user").lean();
+
+    if (!prompt) {
+      return res.render("error/404");
+    }
+
+    if (prompt.user._id != req.user.id && prompt.status == "private") {
+      res.redirect("/prompts/gallery");
+    } else {
+      res.render("prompts/show", {
+        prompt,
+      });
+    }
+  } catch (err) {
+    console.error(err);
+    res.render("error/500");
+  }
 });
 
 // Desc : Process new prompt
