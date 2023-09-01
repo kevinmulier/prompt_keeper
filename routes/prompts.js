@@ -41,20 +41,77 @@ router.post("/", ensureAuth, async (req, res) => {
 // Desc : Edit prompt page
 // Route : GET /prompts/edit/:id
 router.get("/edit/:id", ensureAuth, async (req, res) => {
-  const prompt = await Prompt.findOne({
-    _id: req.params.id,
-  }).lean();
+  try {
+    const prompt = await Prompt.findOne({
+      _id: req.params.id,
+    }).lean();
 
-  if (!prompt) {
-    return res.render("error/404");
+    if (!prompt) {
+      return res.render("error/404");
+    }
+
+    if (prompt.user != req.user.id) {
+      res.redirect("/prompts/gallery");
+    } else {
+      res.render("prompts/edit", {
+        prompt,
+      });
+    }
+  } catch (err) {
+    console.error(err);
+    res.render("error/500");
   }
+});
 
-  if (prompt.user != req.user.id) {
-    res.redirect("/prompts");
-  } else {
-    res.render("prompts/edit", {
-      prompt,
-    });
+// Desc : Update prompt
+// Route : PUT /prompts/:id
+router.put("/:id", ensureAuth, async (req, res) => {
+  try {
+    let prompt = await Prompt.findById(req.params.id).lean();
+
+    if (!prompt) {
+      return res.render("error/404");
+    }
+
+    if (prompt.user != req.user.id) {
+      res.redirect("/prompts/gallery");
+    } else {
+      prompt = await Prompt.findOneAndUpdate({ _id: req.params.id }, req.body, {
+        new: true,
+        runValidators: true,
+      });
+    }
+
+    res.redirect("/dashboard");
+  } catch (err) {
+    console.error(err);
+    res.render("error/500");
+  }
+});
+
+// Desc : Delete prompt
+// Route : DELETE /prompts/:id
+router.delete("/:id", ensureAuth, async (req, res) => {
+  try {
+    let prompt = await Prompt.findById(req.params.id).lean();
+
+    if (!prompt) {
+      return res.render("error/404");
+    }
+
+    if (prompt.user != req.user.id) {
+      res.redirect("/prompts/gallery");
+    } else {
+      prompt = await Prompt.findOneAndUpdate({ _id: req.params.id }, req.body, {
+        new: true,
+        runValidators: true,
+      });
+    }
+
+    res.redirect("/dashboard");
+  } catch (err) {
+    console.error(err);
+    res.render("error/500");
   }
 });
 
