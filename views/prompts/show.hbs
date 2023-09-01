@@ -1,0 +1,31 @@
+<section class="flex flex-col flex-wrap mb-10 text-lg text-white break-all">
+    <section class="flex flex-col flex-wrap mb-4 text-center">
+        <h4 class="mb-2 text-base font-bold sm:text-xl">Title</h4>
+        <p class="text-base sm:text-lg">{{prompt.title}}</p>
+    </section>
+
+    <section class="flex flex-col flex-wrap mb-4 text-center">
+        <h4 class="mb-2 text-base font-bold sm:text-xl">User</h4>
+        <p class="text-base sm:text-lg">{{prompt.user.displayName}}</p>
+    </section>
+
+    <section class="flex flex-col flex-wrap mb-4 text-center">
+        <h5 class="mb-2 text-base font-bold sm:text-xl">AI</h5>
+        <p class="text-base sm:text-lg">{{prompt.ai}}</p>
+    </section>
+
+    <section class="flex flex-col flex-wrap mb-4 text-center">
+        <h5 class="mb-2 text-base font-bold sm:text-xl">Description</h5>
+        <p class="text-base sm:text-lg">{{prompt.description}}</p>
+    </section>
+
+    <section class="flex flex-col flex-wrap mb-4 text-center">
+        <h5 class="mb-2 text-base font-bold sm:text-xl">Prompt</h5>
+        <p class="text-base sm:text-lg">{{prompt.body}}</p>
+    </section>
+</section>
+
+<nav class="flex flex-wrap justify-center mb-4">
+    <a href="/prompts/gallery"
+        class="px-4 py-3 text-base font-bold text-white bg-blue-700 border-2 border-blue-800 rounded shadow-xl sm:text-xl hover:bg-blue-800">Back</a>
+</nav>
