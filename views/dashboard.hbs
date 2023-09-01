@@ -5,7 +5,7 @@
 <table class="w-full text-xs text-center md:text-sm xl:text-base">
     <thead>
         <tr class="text-sm md:text-base lg:text-lg">
-            <th class="w-5/12 px-2 py-4">Title</th>
+            <th class="w-7/12 px-2 py-4">Title</th>
             <th class="w-2/12 px-2 py-4">AI</th>
             <th class="w-2/12 px-2 py-4 max-sm:hidden">Date</th>
             <th class="w-2/12 px-2 py-4">Status</th>
@@ -15,12 +15,16 @@
     <tbody>
         {{#each prompts}}
         <tr class="text-xs border-t border-white md:text-sm lg:text-base odd:bg-slate-900">
-            <td class="px-2 py-3"><a href="/prompts/{{_id}}" class="break-all line-clamp-2">{{toUpperCase
+            <td class="px-2 py-2"><a href="/prompts/{{_id}}" class="break-all line-clamp-2">{{toUpperCase
                     this.title}}</a></td>
-            <td class="px-2 py-3"><span>{{ai}}</span></td>
-            <td class="px-2 py-3 max-sm:hidden">{{formatDate this.createdAt}}</td>
-            <td class="px-2 py-3"><span>{{toUpperCase this.status}}</span></td>
-            <td class="px-2 py-3"></td>
+            <td class="px-2 py-2"><span>{{ai}}</span></td>
+            <td class="px-2 py-2 max-sm:hidden">{{formatDate this.createdAt}}</td>
+            <td class="px-2 py-2"><span>{{toUpperCase this.status}}</span></td>
+            <td class="px-2 py-2 text-2xl">
+                <a href="/prompts/edit/{{_id}}">
+                    <i class="fas fa-edit"></i>
+                </a>
+            </td>
         </tr>
         {{/each}}
     </tbody>
