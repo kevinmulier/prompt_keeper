@@ -29,10 +29,10 @@ if (process.env.NODE_ENV === "dev") {
 }
 
 // Handlebars Helpers
-const { formatDate, toUpperCase, concatToLowerCase, editIcon } = require("./helpers/hbs");
+const { formatDate, toUpperCase, concatToLowerCase, editIcon, select } = require("./helpers/hbs");
 
 // Handlebars
-app.engine(".hbs", exphbs.engine({ helpers: { formatDate, toUpperCase, concatToLowerCase, editIcon }, defaultLayout: "main", extname: ".hbs" }));
+app.engine(".hbs", exphbs.engine({ helpers: { formatDate, toUpperCase, concatToLowerCase, editIcon, select }, defaultLayout: "main", extname: ".hbs" }));
 app.set("view engine", ".hbs");
 
 // Sessions middleware
