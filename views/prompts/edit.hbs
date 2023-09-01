@@ -1,5 +1,15 @@
-<h3 class="mb-5 text-2xl font-bold">Edit your prompt</h3>
-<section class="flex flex-wrap">
+<form action="/prompts/{{prompt._id}}" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <h3 class="mb-5 text-2xl font-bold">Edit or
+        <button
+            class="px-2 py-2 text-xl font-bold text-white bg-red-700 border-2 border-red-800 rounded shadow-xl cursor-pointer hover:bg-red-800"
+            type="submit">
+            <i class="fa-solid fa-trash "></i>
+            <input type="submit" value="DELETE" class="ml-2 cursor-pointer">
+        </button>
+    </h3>
+</form>
+<section class="flex flex-wrap mb-5">
     <form action="/prompts/{{prompt._id}}" method="POST" class="w-full">
         <input type="hidden" name="_method" value="PUT">
         <fieldset class="flex flex-wrap mb-4">
