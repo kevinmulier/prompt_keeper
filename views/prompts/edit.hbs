@@ -1,0 +1,61 @@
+<h3 class="mb-5 text-2xl font-bold">Edit your prompt</h3>
+<section class="flex flex-wrap">
+    <form action="/prompts" method="POST" class="w-full">
+        <fieldset class="flex flex-wrap mb-4">
+            <label for="title" class="block mb-2 text-xl font-bold text-white">Title</label>
+            <input type="text" id="title" name="title" minlength="1" maxlength="40"
+                class="w-full px-3 py-2 leading-tight text-black border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                required value="{{prompt.title}}">
+        </fieldset>
+
+        <fieldset class="flex flex-col flex-wrap mb-4">
+            <label for="ai" class="block mb-2 text-xl font-bold text-white">AI</label>
+            <select id="ai" name="ai"
+                class="px-3 py-2 leading-tight text-black bg-white border rounded shadow w-fit focus:outline-none"
+                required>
+                {{#select prompt.ai}}
+                <option value="ChatGPT" selected>ChatGPT</option>
+                <option value="Bard">Bard</option>
+                <option value="Claude 2">Claude 2</option>
+                <option value="Llama 2">Llama 2</option>
+                <option value="Midjourney">Midjourney</option>
+                <option value="Stable Diffusion">Stable Diffusion</option>
+                <option value="DALL-E 2">DALL-E 2</option>
+                {{/select}}
+            </select>
+        </fieldset>
+
+        <fieldset class="flex flex-col flex-wrap mb-4">
+            <label for="status" class="block mb-2 text-xl font-bold text-white">Status</label>
+            <select id="status" name="status"
+                class="px-3 py-2 leading-tight text-black bg-white border rounded shadow w-fit focus:outline-none focus:shadow-outline"
+                required>
+                {{#select prompt.status}}
+                <option value="public" selected>Public</option>
+                <option value="private">Private</option>
+                {{/select}}
+            </select>
+        </fieldset>
+
+        <fieldset class="flex flex-wrap mb-4">
+            <legend class="mb-2 text-xl font-bold">Paste your prompt</legend>
+            <textarea id="body" name="body" rows="15"
+                class="w-full px-3 py-2 leading-tight text-black border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                required>{{prompt.body}}</textarea>
+        </fieldset>
+
+        <fieldset class="flex flex-wrap mb-4">
+            <legend class="mb-2 text-xl font-bold">Description</legend>
+            <textarea id="description" name="description" rows="5"
+                class="w-full px-3 py-2 leading-tight text-black border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                required>{{prompt.description}}</textarea>
+        </fieldset>
+
+        <nav class="flex flex-wrap mb-4">
+            <input type="submit" value="Save"
+                class="px-4 py-3 text-xl font-bold text-white bg-blue-700 border-2 border-blue-800 rounded shadow-xl cursor-pointer hover:bg-blue-800">
+            <a href="/dashboard"
+                class="px-4 py-3 ml-4 text-xl font-bold text-white bg-red-700 border-2 border-red-800 rounded shadow-xl hover:bg-red-800">Cancel</a>
+        </nav>
+    </form>
+</section>
