@@ -1,8 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const { ensureAuth } = require("../middleware/auth");
+const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 const Prompt = require("../models/Prompt");
+
+// Desc : Add new prompt page
+// Route : GET /prompts/add
+router.get("/add", ensureAuth, (req, res) => {
+  res.render("prompts/add");
+});
 
 // Desc : Prompts gallery
 // Route : GET /prompts/gallery
@@ -67,7 +73,7 @@ router.get("/edit/:id", ensureAuth, async (req, res) => {
       return res.render("error/404");
     }
 
-    if (prompt.user != req.user.id) {
+    if (prompt.user._id != req.user.id) {
       res.redirect("/prompts/gallery");
     } else {
       res.render("prompts/edit", {
