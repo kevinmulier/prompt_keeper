@@ -133,4 +133,17 @@ router.delete("/:id", ensureAuth, async (req, res) => {
   }
 });
 
+// Desc : User prompts
+// Route : GET /prompts/user/:userId
+router.get("/user/:userId", ensureAuth, async (req, res) => {
+  try {
+    const prompts = await Prompt.find({ user: req.params.userId, status: "public" }).populate("user").lean();
+
+    return res.render("prompts/gallery", { prompts });
+  } catch (err) {
+    console.error(err);
+    res.render("error/500");
+  }
+});
+
 module.exports = router;
