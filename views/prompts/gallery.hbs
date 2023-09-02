@@ -5,7 +5,7 @@
     {{#each prompts}}
     <div class="relative flex flex-col items-center p-2 text-white bg-white rounded-lg bg-opacity-5">
         {{{editIcon user ../user _id}}}
-        <a href="#" class="flex items-center p-4 text-xs text-white">
+        <a href="/prompts/user/{{user._id}}" class="flex items-center p-4 text-xs text-white">
             <img class="w-4 h-4 mr-1 rounded-full" src="{{user.image}}" referrerpolicy="no-referrer"
                 alt="Avatar of {{user.displayName}}">
             <span>{{user.displayName}}</span>
