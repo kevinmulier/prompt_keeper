@@ -3,9 +3,9 @@
 <div
     class="container grid grid-cols-1 gap-4 mx-auto md:gap-6 lg:gap-10 md:grid-cols-3 min-[480px]:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
     {{#each prompts}}
-    <div class="relative flex flex-col items-center p-2 bg-white rounded-lg">
+    <div class="relative flex flex-col items-center p-2 text-white bg-white rounded-lg bg-opacity-5">
         {{{editIcon user ../user _id}}}
-        <a href="#" class="flex items-center p-4 text-xs text-slate-700">
+        <a href="#" class="flex items-center p-4 text-xs text-white">
             <img class="w-4 h-4 mr-1 rounded-full" src="{{user.image}}" referrerpolicy="no-referrer"
                 alt="Avatar of {{user.displayName}}">
             <span>{{user.displayName}}</span>
@@ -16,10 +16,10 @@
         <div class="flex flex-col justify-between w-full h-full p-4 pt-0">
 
             <div class="flex flex-col justify-between mb-3 text-center">
-                <h2 href="#" class="text-xs font-bold break-all text-slate-900 line-clamp-1">
+                <h2 href="#" class="text-xs font-bold text-white break-all line-clamp-1">
                     {{title}}</h2>
-                <p class="mb-2 text-xs break-all text-slate-700">{{ai}}</p>
-                <p class="text-xs break-all text-slate-700 line-clamp-3">{{description}}
+                <p class="mb-2 text-xs text-white break-all">{{ai}}</p>
+                <p class="text-xs text-white break-all line-clamp-3">{{description}}
                 </p>
             </div>
 
