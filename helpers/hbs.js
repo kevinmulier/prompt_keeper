@@ -19,7 +19,7 @@ module.exports = {
   editIcon: function (promptUser, loggedUser, promptId, floating = true) {
     if (promptUser._id.toString() == loggedUser._id.toString()) {
       if (floating) {
-        return `<a href="/prompts/edit/${promptId}" class="absolute text-center w-12 h-12 top-0 right-[5%] transform -translate-y-1/4 bg-blue-700 hover:bg-blue-800 border-white border-2 text-white p-2 rounded-full"><i class="fas fa-edit text-xs"></i></a>`;
+        return `<a href="/prompts/edit/${promptId}" class="absolute text-center w-12 h-12 top-0 right-[5%] transform -translate-y-1/4 bg-blue-700 hover:bg-blue-800 border-blue-800 border-2 text-white p-2 rounded-full"><i class="fas fa-edit text-xs"></i></a>`;
       } else {
         return `<a href="/prompts/edit/${promptId}"><i class="fas fa-edit"></i></a>`;
       }
