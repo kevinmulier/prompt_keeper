@@ -1,10 +1,27 @@
-# 📔 Prompt Keeper
+# Prompt Keeper 📔
 
-## 📝 Description
+## Description 📝
 
 Prompt Keeper is a web-based application designed to store and manage user prompts across various AI models such as ChatGPT, Midjourney, Claude2, and Stable Diffusion. The application allows users to create, read, update, and delete prompts. Users can also view their prompts in a dashboard and explore a public gallery of prompts from other users. With Google OAuth for authentication, Prompt Keeper offers a secure way to manage and keep track of all your prompts in one place.
 
-## ⚙️ Features
+## Table of Contents 🗂️
+
+1. [Description](#description-)
+2. [Features](#features-️)
+3. [Technologies Used](#technologies-used-️)
+4. [Project Structure](#project-structure-)
+5. [Setup and Installation](#setup-and-installation-)
+    - [Prerequisites](#prerequisites-️)
+    - [Installation](#installation-)
+6. [Usage](#usage-)
+7. [Insights Gained](#insights-gained-)
+    - [Software Architecture](#software-architecture)
+    - [Authentication and Security](#authentication-and-security)
+    - [Database Management](#database-management)
+    - [Front-End Technologies](#front-end-technologies)
+8. [Support and Contribution](#support-and-contribution-)
+
+## Features ⚙️
 
 - User authentication via Google OAuth
 - Dashboard for managing prompts
@@ -13,7 +30,7 @@ Prompt Keeper is a web-based application designed to store and manage user promp
 - Support for multiple AI models
 - Responsive UI
 
-## 🛠 Technologies Used
+## Technologies Used 🛠
 
 - Node.js
 - Express.js
@@ -22,7 +39,7 @@ Prompt Keeper is a web-based application designed to store and manage user promp
 - Passport.js (Google OAuth)
 - Handlebars.js (for Views, Layouts, and Partials)
 
-## 📂 Project Structure
+## Project Structure 📂
 
 Here's an overview of the main files and folders in this project:
 
@@ -35,14 +52,14 @@ Here's an overview of the main files and folders in this project:
 - `/public` - Contains static files
 - `app.js` - Entry point for the application
 
-## 🛠 Setup and Installation
+## Setup and Installation 🛠
 
-### 📋 Prerequisites
+### Prerequisites 📋
 
 - Node.js
 - MongoDB
 
-### 🔧 Installation
+### Installation 🔧
 
 1. Clone the repository.
    
@@ -78,14 +95,14 @@ Here's an overview of the main files and folders in this project:
     npm run start
     ```
 
-## 📖 Usage
+## Usage 📖
 
 1. Open your web browser and go to `http://localhost:3000` (or whatever port you've set).
 2. Use the Google OAuth flow to log in.
 3. Once logged in, you can use the dashboard to create, edit, or delete prompts.
 4. You can also view the public gallery of prompts or click on a user name to see all its public prompts.
 
-## 🌟 Insights Gained
+## Insights Gained 🌟
 
 The development process provided valuable insights into various technical areas critical for full-stack development.
 
@@ -108,6 +125,6 @@ The development process provided valuable insights into various technical areas 
 
 - The use of Handlebars.js provided exposure to server-side templating mechanisms.
 
-## 👥 Support and Contribution
+## Support and Contribution 👥
 
 Feel free to fork the project and submit pull requests for any features or fixes you think would improve the app. If you encounter any issues or have suggestions, please open an issue on GitHub.
