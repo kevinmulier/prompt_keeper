@@ -1,31 +1,14 @@
 const express = require("express");
 const router = express.Router();
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
-
-const Prompt = require("../models/Prompt");
+const dashboardController = require("../controllers/dashboardController");
 
 // Desc : Login / Landing page
 // Route : GET /
-router.get("/", ensureGuest, (req, res) => {
-  res.render("login", {
-    layout: "login",
-  });
-});
+router.get("/", ensureGuest, dashboardController.getLoginPage);
 
 // Desc : Dashboard
 // Route : GET /dashboard
-router.get("/dashboard", ensureAuth, async (req, res) => {
-  try {
-    const prompts = await Prompt.find({ user: req.user.id }).sort({ createdAt: -1 }).lean();
-    res.render("dashboard", {
-      name: req.user.firstName,
-      prompts,
-      addButton: true,
-    });
-  } catch (err) {
-    console.error(err);
-    res.render("error/500");
-  }
-});
+router.get("/dashboard", ensureAuth, dashboardController.getDashboard);
 
 module.exports = router;
