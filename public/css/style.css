@@ -807,6 +807,12 @@ video {
 .overflow-y-auto {
   overflow-y: auto;
 }
+.whitespace-pre-line {
+  white-space: pre-line;
+}
+.break-words {
+  overflow-wrap: break-word;
+}
 .break-all {
   word-break: break-all;
 }
